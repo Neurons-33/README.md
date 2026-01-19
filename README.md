@@ -46,7 +46,7 @@
 - Many samples lie near or across the boundary.
 - The learned boundary reflects noise rather than underlying geometry.
 
----
+
 
 ## -- Interpretation
 
@@ -62,11 +62,11 @@ This experiment shows that:
 - Noise primarily degrades *geometric separability*, not just optimization.
 - A stable boundary requires both sufficient model capacity and clean structure.
 
----
+
 
 ## -- Key Takeaway
 
-> Noise does not merely add randomness —  
+> Noise does not merely add randomness
 > it reshapes the geometry that the model is trying to learn.
 
 Understanding model behavior requires observing how noise alters
