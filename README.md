@@ -22,3 +22,26 @@
 - Learning rate: 1e-2
 - Epochs: 1500
 - Evaluation: Decision Boundary
+
+### Observations
+
+#### Noise = 0.05 (Low noise)
+
+- The decision boundary is smooth and well-aligned with the true data geometry.
+- The two moon-shaped clusters are clearly separable.
+- Training converges quickly and stably.
+- The learned boundary closely matches intuitive expectations.
+
+#### Noise = 0.20 (Moderate noise)
+
+- The decision boundary becomes less smooth.
+- Local fluctuations appear near overlapping regions.
+- The global structure is still preserved, but uncertainty increases.
+- Validation accuracy remains reasonable, but loss oscillation increases.
+
+#### Noise = 0.40 (High noise)
+
+- The decision boundary becomes irregular and fragmented.
+- The model struggles to identify a consistent global structure.
+- Many samples lie near or across the boundary.
+- The learned boundary reflects noise rather than underlying geometry.
