@@ -1,4 +1,4 @@
-# Control the noise level to observe how noise affects the decision boundary during training.
+# Control the data noise level to observe how noise affects the decision boundary during training.
 
 - Neurons flow through the activation function to introduce nonlinearity into the model.
 
