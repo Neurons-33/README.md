@@ -23,25 +23,51 @@
 - Epochs: 1500
 - Evaluation: Decision Boundary
 
-### -- Observations
+## -- Observations
 
-#### Noise = 0.05 (Low noise)
+### Noise = 0.05 (Low noise)
 
 - The decision boundary is smooth and well-aligned with the true data geometry.
 - The two moon-shaped clusters are clearly separable.
 - Training converges quickly and stably.
 - The learned boundary closely matches intuitive expectations.
 
-#### Noise = 0.20 (Moderate noise)
+### Noise = 0.20 (Moderate noise)
 
 - The decision boundary becomes less smooth.
 - Local fluctuations appear near overlapping regions.
 - The global structure is still preserved, but uncertainty increases.
 - Validation accuracy remains reasonable, but loss oscillation increases.
 
-#### Noise = 0.40 (High noise)
+### Noise = 0.40 (High noise)
 
 - The decision boundary becomes irregular and fragmented.
 - The model struggles to identify a consistent global structure.
 - Many samples lie near or across the boundary.
 - The learned boundary reflects noise rather than underlying geometry.
+
+---
+
+## -- Interpretation
+
+Noise directly affects the **geometric clarity** of the dataset.
+
+As noise increases:
+- The effective margin between classes shrinks.
+- The decision boundary becomes increasingly sensitive to local variations.
+- Model capacity is partially spent fitting noise instead of structure.
+
+This experiment shows that:
+- Decision boundary visualization reveals information not captured by accuracy alone.
+- Noise primarily degrades *geometric separability*, not just optimization.
+- A stable boundary requires both sufficient model capacity and clean structure.
+
+---
+
+## -- Key Takeaway
+
+> Noise does not merely add randomness —  
+> it reshapes the geometry that the model is trying to learn.
+
+Understanding model behavior requires observing how noise alters
+the learned decision boundary, not just tracking scalar metrics.
