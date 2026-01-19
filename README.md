@@ -23,7 +23,7 @@
 - Epochs: 1500
 - Evaluation: Decision Boundary
 
-### Observations
+### -- Observations
 
 #### Noise = 0.05 (Low noise)
 
