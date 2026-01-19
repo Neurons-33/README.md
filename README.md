@@ -105,3 +105,4 @@ It is a decision policy, not a property of the model itself.
 These six axes form a diagnostic framework rather than a training recipe.
 They are used repeatedly throughout subsequent experiments
 to interpret how and why decision boundaries change.
+
