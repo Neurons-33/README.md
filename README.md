@@ -7,7 +7,7 @@
 - Compute the validation loss at this step to compare it with the training loss, and show the decision boundary.
 
 
-# -- Experiment Setup
+# Experiment Setup
 
 - Dataset: 'make_moons'
 - Number of samples: 1200
@@ -23,7 +23,7 @@
 - Epochs: 1500
 - Evaluation: Decision Boundary
 
-## -- Observations
+## Observations
 
 ### Noise = 0.05 (Low noise)
 
@@ -48,7 +48,7 @@
 
 
 
-## -- Interpretation
+## Interpretation
 
 Noise directly affects the **geometric clarity** of the dataset.
 
@@ -64,7 +64,7 @@ This experiment shows that:
 
 
 
-## -- Key Takeaway
+## Key Takeaway
 
 > Noise does not merely add randomness
 > it reshapes the geometry that the model is trying to learn.
