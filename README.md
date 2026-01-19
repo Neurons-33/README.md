@@ -10,5 +10,6 @@
 # -- Experiment Setup
 - Dataset: Moons
 - Model: MLP
+- Actavition: ReLU
 - Optimizer: Adam
 - Evaluation: Decision Boundary
