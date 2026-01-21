@@ -57,6 +57,7 @@ All other settings were kept constant to isolate the effect of label imbalance.
 
 ---
 
+<img width="1200" height="400" alt="Imbalance" src="https://github.com/user-attachments/assets/5c0a09be-0031-42b7-a5dc-3fbb7ff690f3" />
 
 
 ## Observations
@@ -101,7 +102,8 @@ Accuracy alone becomes misleading in this regime.
 
 ---
 
-5555
+<img width="500" height="275" alt="Imbalance_val_loss" src="https://github.com/user-attachments/assets/14847a4f-093a-443a-b978-fe545705bd5b" />
+
 
 ## Key Takeaways
 
