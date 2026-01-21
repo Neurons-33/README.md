@@ -38,7 +38,9 @@
 
 ---
 
-![noise.png](attachment:0b9bacc9-35ce-4225-a660-c578392ea4e4:noise.png)
+
+<img width="1200" height="400" alt="noise" src="https://github.com/user-attachments/assets/197497b9-8f6e-429d-b2a8-dd0bb14be490" />
+
 
 ## **Observations**
 
@@ -79,7 +81,8 @@ As noise increases:
 - The decision boundary becomes increasingly sensitive to local variations.
 - Model capacity is partially spent fitting noise instead of structure.
 
-![noise_val_loss.png](attachment:28814347-1862-4b68-8dac-6d9526608f93:noise_val_loss.png)
+<img width="497" height="276" alt="noise_val_loss" src="https://github.com/user-attachments/assets/eb8bd5dc-7fe5-4b20-8ac9-15740b06af8d" />
+
 
 This experiment shows that:
 
