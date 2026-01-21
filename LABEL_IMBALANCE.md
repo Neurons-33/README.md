@@ -57,7 +57,7 @@ All other settings were kept constant to isolate the effect of label imbalance.
 
 ---
 
-![Imbalance.png](attachment:d7a40def-1315-4b0a-a9f6-6632b83c9e02:Imbalance.png)
+
 
 ## Observations
 
