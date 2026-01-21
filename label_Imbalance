@@ -1,0 +1,128 @@
+# 4.Observe how label imbalance affects the decision boundary during training
+
+# Moons Dataset – Class Imbalance Experiment
+
+## Experiment Goal
+
+This experiment investigates how **class imbalance in label `y`** affects:
+
+- model training dynamics
+- decision boundary behavior
+- generalization under different class ratios
+
+The objective is **not** to optimize accuracy, but to observe how a neural network reallocates decision boundaries and error distribution under biased training conditions.
+
+---
+
+## Experimental Setup
+
+**Dataset**
+
+- **Dataset**
+- Source: `sklearn.datasets.make_moons`
+- Number of samples: 1200
+- Train / Validation split: 75% / 25%
+
+**Feature Processing**
+
+- StandardScaler (fit on full dataset)
+
+**Model**
+
+- MLP with 2 hidden layers
+- Architecture: 2 → 32 → 32 → 1
+- Activation: ReLU
+
+**Training**
+
+- Loss: BCEWithLogitsLoss
+- Optimizer: Adam
+- Learning rate: 1e-2
+- Epochs: 1500
+
+**Evaluation**
+
+- Training loss
+- Validation loss
+- Validation accuracy
+- Variable of interest: **class ratio in training labels**
+
+**Class ratios tested**
+
+- **0.5 : 0.5** (balanced)
+- **0.7 : 0.3** (moderate imbalance)
+- **0.9 : 0.1** (severe imbalance)
+
+All other settings were kept constant to isolate the effect of label imbalance.
+
+---
+
+![Imbalance.png](attachment:d7a40def-1315-4b0a-a9f6-6632b83c9e02:Imbalance.png)
+
+## Observations
+
+### 1. Class Ratio 0.5 : 0.5 (Balanced)
+
+- Training and validation loss decrease consistently.
+- Validation accuracy reaches a high level (~0.99).
+- No significant divergence between training and validation behavior.
+
+**Interpretation:**
+
+Under balanced conditions, the model is able to learn a stable and well-generalized decision boundary. Loss dynamics and accuracy are aligned, indicating that model capacity and data structure are well matched.
+
+---
+
+### 2. Class Ratio 0.7 : 0.3 (Moderate Imbalance)
+
+- Validation accuracy remains high (~0.97).
+- Validation loss begins to increase relative to the balanced case.
+- Training loss continues to decrease steadily.
+
+**Interpretation:**
+
+The model still captures the underlying class structure, but early signs of trade-off appear. Error cost is no longer evenly distributed, and the model begins favoring the majority class during optimization.
+
+---
+
+### 3. Class Ratio 0.9 : 0.1 (Severe Imbalance)
+
+- Training loss becomes extremely low.
+- Validation loss increases sharply.
+- Validation accuracy remains high (~0.95).
+
+**Interpretation:**
+
+Despite high accuracy, the model exhibits systematic error concentration on the minority class.
+
+This behavior is not indicative of random overfitting, but rather a consequence of biased optimization: the model confidently sacrifices minority-class performance to minimize overall loss under the given class distribution.
+
+Accuracy alone becomes misleading in this regime.
+
+---
+
+5555
+
+## Key Takeaways
+
+- Class imbalance does not inherently cause training failure.
+- Changes in decision boundary and loss behavior reflect **structured trade-offs**, not random errors.
+- Under severe imbalance, high accuracy can coexist with poor minority-class performance.
+- Observed behavior should be treated as **empirical observation**, not direct proof of an explicit minimum-risk strategy.
+
+---
+
+## Notes on Interpretation
+
+At this stage, conclusions are based on observable outcomes (loss curves, accuracy, decision boundaries).
+
+Further validation (e.g., confusion matrix analysis, class-weighted loss, or risk reweighting experiments) is required to confirm whether the observed behavior directly corresponds to minimum-risk optimization under altered class priors.
+
+---
+
+## Conclusion
+
+This experiment demonstrates that label imbalance significantly alters model behavior, not by breaking training, but by reshaping how decision boundaries and errors are distributed.
+
+Understanding these effects is critical before attributing model behavior to optimization principles such as minimum-risk learning.
+
