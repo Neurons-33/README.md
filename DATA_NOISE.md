@@ -1,83 +1,99 @@
-# Control the data noise level to observe how noise affects the decision boundary during training.
+# **3.Control the data noise level to observe how noise affects the decision boundary during training.**
 
 - Neurons flow through the activation function to introduce nonlinearity into the model.
-
 - We keep the logits, as they help reduce prediction errors, then pass the data into the training function and return the model output.
-
 - Compute the validation loss at this step to compare it with the training loss, and show the decision boundary.
 
+---
 
-# Experiment Setup
+## **Experiment Setup**
 
-### Dataset
-- Source: `make_moons`
+**Dataset**
+
+- Source: `sklearn.datasets.make_moons`
 - Number of samples: 1200
 - Noise levels: 0.05, 0.20, 0.40
 - Train / Validation split: 75% / 25%
 
-### Feature Processing
+**Feature Processing**
+
 - StandardScaler (fit on full dataset)
 
-### Model
+**Model**
+
 - MLP with 2 hidden layers
 - Architecture: 2 → 32 → 32 → 1
 - Activation: ReLU
 
-### Training
+**Training**
+
 - Loss: BCEWithLogitsLoss
 - Optimizer: Adam
 - Learning rate: 1e-2
 - Epochs: 1500
 
-### Evaluation
+**Evaluation**
+
 - Decision boundary visualization
 
+---
 
-## Observations
+![noise.png](attachment:0b9bacc9-35ce-4225-a660-c578392ea4e4:noise.png)
 
-### Noise = 0.05 (Low noise)
+## **Observations**
+
+### **Noise = 0.05 (Low noise)**
 
 - The decision boundary is smooth and well-aligned with the true data geometry.
 - The two moon-shaped clusters are clearly separable.
 - Training converges quickly and stably.
 - The learned boundary closely matches intuitive expectations.
 
-### Noise = 0.20 (Moderate noise)
+---
+
+### **Noise = 0.20 (Moderate noise)**
 
 - The decision boundary becomes less smooth.
 - Local fluctuations appear near overlapping regions.
 - The global structure is still preserved, but uncertainty increases.
 - Validation accuracy remains reasonable, but loss oscillation increases.
 
-### Noise = 0.40 (High noise)
+---
+
+### **Noise = 0.40 (High noise)**
 
 - The decision boundary becomes irregular and fragmented.
 - The model struggles to identify a consistent global structure.
 - Many samples lie near or across the boundary.
 - The learned boundary reflects noise rather than underlying geometry.
 
+---
 
+## **Interpretation**
 
-## Interpretation
-
-Noise directly affects the **geometric clarity** of the dataset.
+Noise directly affects the **geometric clarity** of the dataset.
 
 As noise increases:
+
 - The effective margin between classes shrinks.
 - The decision boundary becomes increasingly sensitive to local variations.
 - Model capacity is partially spent fitting noise instead of structure.
 
+![noise_val_loss.png](attachment:28814347-1862-4b68-8dac-6d9526608f93:noise_val_loss.png)
+
 This experiment shows that:
+
 - Decision boundary visualization reveals information not captured by accuracy alone.
-- Noise primarily degrades *geometric separability*, not just optimization.
+- Noise primarily degrades *geometric separability*, not just optimization.
 - A stable boundary requires both sufficient model capacity and clean structure.
 
+---
 
+## **Key Takeaway**
 
-## Key Takeaway
+> Noise does not merely add randomness it reshapes the geometry that the model is trying to learn.
+> 
 
-> Noise does not merely add randomness
-> it reshapes the geometry that the model is trying to learn.
+---
 
-Understanding model behavior requires observing how noise alters
-the learned decision boundary, not just tracking scalar metrics.
+Understanding model behavior requires observing how noise alters the learned decision boundary, not just tracking scalar metrics.
