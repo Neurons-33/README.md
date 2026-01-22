@@ -19,6 +19,7 @@ In this experiment, the **confusion matrix** is used not merely to report perfor
 
 By examining **precision**, **recall**, and the corresponding confusion matrix entries, we observe **which types of errors the model chooses to tolerate**, and how these choices reflect its inductive bias rather than raw accuracy.
 
+---
 
 ## Class Imbalance and Geometric Consistency
 
@@ -28,6 +29,7 @@ The goal is not to correct imbalance, but to observe whether the model can still
 
 When the resulting confusion matrix remains interpretable and geometrically consistent, it suggests that the **data structure and the model’s inductive bias are compatible**.
 
+---
 
 ## Early Epochs and Initialization Effects
 
@@ -42,6 +44,7 @@ Confusion matrices at **epoch = 0** reveal whether the model starts from a confi
 
 These early conditions often influence the final solution, even after prolonged training, indicating that **early training dynamics can constrain long-term model behavior**.
 
+---
 
 ## Random Seed as Exploration
 
