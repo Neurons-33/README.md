@@ -1,5 +1,7 @@
 ## A Structured Way to Observe Decision Boundary Behavior
 
+This chapter is part of a collection of learning notes where I document how my understanding of machine learning models evolves through small, controlled experiments.
+
 This chapter defines the analytical axes I use to interpret model behavior
 through decision boundary visualization.
 Rather than treating accuracy as the primary signal,
@@ -7,6 +9,7 @@ the focus is on how a model *behaves* under controlled perturbations.
 
 The following dimensions are not independent tricks,
 but complementary lenses for diagnosing model dynamics.
+
 
 ---
 
